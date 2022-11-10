@@ -1,0 +1,21 @@
+mat-grid-tile {
+    background: lightblue;
+   
+  }
+
+  .mat-grid-list{
+    margin:100px;
+    text-align: center
+  }
+
+  .mat-grid-tile{
+    
+  }
+
+ 
+
+  
+  .calculator {
+    max-width: 500px;
+    margin: auto;
+  }

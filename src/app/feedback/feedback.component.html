@@ -1,1 +1,12 @@
-<p>feedback works!</p>
+<h1>Anna palautetta tästä!</h1>
+
+<div class="feedback" *ngFor="let q of questions">
+
+    {{q.question}}
+
+
+    <br>
+
+<mat-slider  min="0" max="3" step="1" value="4" (input)="onInputChange($event, q)" aria-label="unit(s)"></mat-slider>
+      {{q.answear}}
+</div>

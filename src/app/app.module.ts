@@ -15,6 +15,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+//import { RegistrationComponent } from './form/form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { TemplateComponent } from './template/template.component';
+
 
 
  
@@ -23,14 +30,18 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 
-@NgModule({
+@NgModule({ 
+  
   declarations: [
     AppComponent,
     CalculatorComponent,
     FeedbackComponent,
     HelloworldComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ReactiveformComponent,
+    TemplateComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,10 +52,14 @@ import {MatMenuModule} from '@angular/material/menu';
     MatGridListModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
-   
-    
-  ],
+    MatMenuModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+ 
+
+  ],  
+ 
 
   
   providers: [],

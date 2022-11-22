@@ -1,0 +1,50 @@
+
+
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="first name" formControlName="firstName">
+            <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="firstName?.hasError('minlength')"> minimi 2 characters required</mat-error>
+            <mat-error *ngIf="firstName?.hasError('pattern')">Mast be valid name</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="last name" formControlName="lastName">
+            <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+            <mat-error *ngIf="lastName?.hasError('minlength')"> minimi 2 characters required</mat-error>
+            <mat-error *ngIf="lastName?.hasError('pattern')">Mast be valid name</mat-error>
+        </mat-form-field>
+
+        <br>
+        <br>
+
+
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="person ID" formControlName="personID">
+            <mat-error *ngIf="personID?.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="personID?.hasError('minlength')"> minimi 2 characters required</mat-error>
+            <mat-error *ngIf="personID?.hasError('pattern')">Mast be valid name</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="field-full-width">
+            <input matInput type="password" placeholder="password" formControlName="password">
+            <mat-error *ngIf="passworld?.hasError('required')">Enter password</mat-error>
+            <mat-error *ngIf="passworld?.hasError('minlength')"> Minium 10 characters required</mat-error>
+            <mat-error *ngIf="passworld?.hasError('pattern')">Mast have letters and numbers</mat-error>
+        </mat-form-field>
+
+
+
+        <div>
+            <mat-form-field class="field-full-width">
+                <input matInput type="password" placeholder="password confirm" formControlName="passwordConfirm"
+                    pattern="{{passworld?.value}}">
+                <mat-error *ngIf="passworld?.hasError('required')">Enter valid password, minimun 10 characters required
+                </mat-error>
+                <mat-error *ngIf="passworld?.hasError('pattern')">Must have letters and numbers</mat-error>
+            </mat-form-field>
+        </div>

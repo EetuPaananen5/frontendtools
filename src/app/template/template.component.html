@@ -1,0 +1,37 @@
+<p>template works!</p>
+
+<form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name:</mat-label>
+            <input matInput placeholder="Eetu" [(ngModel)]="firstName" #fname="ngModel" required minlength="2"
+                pattern="^[a-zA-Z]$">
+            <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+        </mat-form-field>
+    </div>
+
+
+
+
+<div class="example-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Person Id:</mat-label> <input matInput placeholder="060300B56C" [(ngModel)]="personId"
+            #pID="ngModel" required minlength="11" required maxlength="11"
+            pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d+|\d\d-|[01]\dA)\d{3}[\dA-Z]">
+        <mat-error *ngIf="pID.hasError('required')">Enter your ID</mat-error>
+        <mat-error *ngIf="pID.hasError('minlength')">Must be 11 characters</mat-error>
+            <mat-error *ngIf="pID.hasError('pattern')">Must be valid personID</mat-error>
+    </mat-form-field>
+</div>
+
+<div class="example-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Password:</mat-label>
+        <input matInput placeholder="TääOnSalasana123" [(ngModel)]="Password" #pPassword="ngModel" type="password"
+            name="password1" required minlength="10" required maxlength="18" pattern="^[a-zA-Z]$">
+        <mat-error *ngIf="pPassword.hasError('required')">Enter valid password, minimum 10 character</mat-error>
+        <mat-error *ngIf="pPassword.hasError('required')">Must have letters and numbers</mat-error>
+    </mat-form-field>
+</div>

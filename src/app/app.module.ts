@@ -21,13 +21,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TemplateComponent } from './template/template.component';
-
-
-
- 
-
-
-
+import { CinemaComponent } from './cinema/cinema.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({ 
@@ -39,7 +34,8 @@ import { TemplateComponent } from './template/template.component';
     HelloworldComponent,
     ToolbarComponent,
     ReactiveformComponent,
-    TemplateComponent
+    TemplateComponent,
+    CinemaComponent
   ],
 
   imports: [
@@ -56,6 +52,7 @@ import { TemplateComponent } from './template/template.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatExpansionModule,
  
 
   ],  

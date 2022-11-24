@@ -20,13 +20,12 @@ export class TemplateComponent implements OnInit {
   onSubmit(x: any): any {
 
   }
-
-
-
-
   constructor() { }
 
   ngOnInit(): void {
   }
+
+//OnSubmit(e:any)
+
 
 }

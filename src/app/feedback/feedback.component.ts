@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../question';
+import { FeedbackService } from '../services/feedback.service';
 
 @Component({
   selector: 'app-feedback',
@@ -8,8 +9,9 @@ import { Question } from '../question';
 })
 export class FeedbackComponent implements OnInit {
 
- // questions: String[] = ["Kysymys 1", "Kysymys 2", "Kysymys 3"];
-  questions: Question[] = [new Question("Kysymys 1", "Ei Arvosteltu" ), new Question("Kysymys 2", "Ei Arvosteltu" ), new Question("Kysymys 3", "Ei Arvosteltu")];
+  questions: Question[] ;
+ 
+ // questions: Question[] = [new Question("Kysymys 1", "Ei Arvosteltu" ), new Question("Kysymys 2", "Ei Arvosteltu" ), new Question("Kysymys 3", "Ei Arvosteltu")];
 
   onInputChange(e : any, q: Question): void {
       //q.answear= e.value; , tulostaa valuen arvon eli numeron
@@ -37,9 +39,13 @@ export class FeedbackComponent implements OnInit {
 
   }
 
-  constructor() { }
+  constructor(fbservice: FeedbackService) { 
+    this.questions = fbservice.getData();
+    //questions=fbservice.getData();
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

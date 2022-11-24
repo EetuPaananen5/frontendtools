@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-firstName: any;
+  pwrd: any;
+  firstName: any;
   lastName: any;
   personId: any;
   email: any;
@@ -15,6 +16,7 @@ firstName: any;
   Password: any;
   ConfirmPassword: any;
   hasAcceptedTerms: any;
+  acceptCheckbox: any;
   onSubmit(x: any): any {
 
   }

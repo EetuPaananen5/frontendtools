@@ -1,5 +1,7 @@
+<div class="kirjoituspaikka">
 
-
+    <br><br>
+    <h1>Reactoveform Works!</h1>
 
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
@@ -36,15 +38,25 @@
             <mat-error *ngIf="passworld?.hasError('minlength')"> Minium 10 characters required</mat-error>
             <mat-error *ngIf="passworld?.hasError('pattern')">Mast have letters and numbers</mat-error>
         </mat-form-field>
+        <br>
 
+        <mat-form-field class="field-full-width">
+            <input matInput type="password" placeholder="password confirm" formControlName="passwordConfirm"
+                pattern="{{passworld?.value}}">
+            <mat-error *ngIf="passworld?.hasError('required')">Enter valid password, minimun 10 characters required
+            </mat-error>
+            <mat-error *ngIf="passworld?.hasError('pattern')">Must have letters and numbers</mat-error>
+        </mat-form-field>
 
+        <br><br>
+
+        <!--p>Accept terms and conditions!</p>
+        <mat-checkbox formControlName="acceptCheckbox"></mat-checkbox>
+        <mat-error *ngIf="acceptCheckbox?.hasError('requiredTrue')"> accept termsconditions </mat-error>
+        <br><br>
+        <button mat-button color="primary" type="submit" [disabled]="profileForm.invalid">submit</button-->
 
         <div>
-            <mat-form-field class="field-full-width">
-                <input matInput type="password" placeholder="password confirm" formControlName="passwordConfirm"
-                    pattern="{{passworld?.value}}">
-                <mat-error *ngIf="passworld?.hasError('required')">Enter valid password, minimun 10 characters required
-                </mat-error>
-                <mat-error *ngIf="passworld?.hasError('pattern')">Must have letters and numbers</mat-error>
-            </mat-form-field>
+
+
         </div>

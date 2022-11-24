@@ -37,6 +37,11 @@ export class ReactiveformComponent implements OnInit {
     return this.profileForm.get('personID');
   }
 
+  get acceptCheckbox() {
+    return this.profileForm.get('acceptCheckbox');
+  }
+
+
 
   constructor() {
     this.profileForm = new FormGroup({
@@ -45,6 +50,7 @@ export class ReactiveformComponent implements OnInit {
       passworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
       confirmpassworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
       personID: new FormControl('060300b67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\d\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
+      acceptCheckbox: new FormControl('' , [Validators.requiredTrue]),
     })
 
   }

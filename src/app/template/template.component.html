@@ -2,6 +2,7 @@
     <br><br>
     <h1>Template works!</h1>
 
+
     <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
         <div class="example-container">
             <mat-form-field appearance="fill">
@@ -28,10 +29,9 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Person Id:</mat-label> <input matInput placeholder="060300B56C" [(ngModel)]="personId"
-                    #pID="ngModel" required minlength="11" required maxlength="11"
+                    #pID="ngModel" 
                     pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d+|\d\d-|[01]\dA)\d{3}[\dA-Z]">
                 <mat-error *ngIf="pID.hasError('required')">Enter your ID</mat-error>
-                <mat-error *ngIf="pID.hasError('minlength')">Must be 11 characters</mat-error>
                 <mat-error *ngIf="pID.hasError('pattern')">Must be valid personID</mat-error>
             </mat-form-field>
         </div>
@@ -39,11 +39,11 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Email:</mat-label>
-                <input matInput placeholder="eetu.paananen@gmail.com" [(ngModel)]="email" #fname="ngModel" required
-                    minlength="2" pattern="^[a-zA-Z]$">
-                <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-                <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+                <input matInput placeholder="eetu.paananen@gmail.com" [(ngModel)]="email" #mail="ngModel" required
+                    minlength="2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <mat-error *ngIf="mail.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="mail.hasError('minlength')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="mail.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div>
 
@@ -52,7 +52,7 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Username:</mat-label>
-                <input matInput placeholder="samurai44" [(ngModel)]="Username" #fname="ngModel" required minlength="2"
+                <input matInput placeholder="samurai44" [(ngModel)]="Username" #fname="ngModel" required minlength="6"
                     pattern="^[a-zA-Z]$">
                 <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
@@ -75,7 +75,7 @@
             </mat-form-field>
         </div>
 
-        
+
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Confirm Password:</mat-label>
@@ -87,7 +87,9 @@
             </mat-form-field>
 
             <br><br>
-            <input type="checkbox" required>
+            <input type="checkbox" required name="checkbox" [(ngModel)]="hasAcceptedTerms" >
+
+            <button input type="submit" class="btn btn-success"  [disabled]="form1.invalid"> Submit </button>
 
             <!--div class="example-container">
         <mat-form-field appearance="fill">
@@ -108,3 +110,15 @@
 
 
         </div>
+
+        <!--mat-form-field>
+            <input matInput 
+            placeholder="first name" 
+            [(ngModel)]="firstName"
+             #fname="ngModel" 
+             required minlength="2"  pattern="^[a-zA-Z]$">
+            <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+        </mat-form-field-->
+    

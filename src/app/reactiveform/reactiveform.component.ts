@@ -40,17 +40,27 @@ export class ReactiveformComponent implements OnInit {
   get acceptCheckbox() {
     return this.profileForm.get('acceptCheckbox');
   }
+  get Username() {
+    return this.profileForm.get('Username');
+  }
+  get email() {
+    return this.profileForm.get('email');
+  }
 
 
+  
 
   constructor() {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Iiro', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
       lastName: new FormControl('Haanpaa', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
       passworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
+      Username: new FormControl('Iirokuu12', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
+      email: new FormControl('iiro.joo@gmai.com', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
       confirmpassworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      personID: new FormControl('060300b67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\d\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
+      personID: new FormControl('060300b67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\\d\\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
       acceptCheckbox: new FormControl('' , [Validators.requiredTrue]),
+     
     })
 
   }

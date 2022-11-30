@@ -4,8 +4,18 @@ export class Person {
 
     lastName: string="";
 
-    Email: any="";
+    email: any="";
 
     passWord: any="";
 
+    personId: any="";
+
+    
+
+
+
 }
+
+
+
+

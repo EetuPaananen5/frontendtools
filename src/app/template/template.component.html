@@ -7,7 +7,7 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>First Name:</mat-label>
-                <input matInput placeholder="Eetu" [(ngModel)]="firstName" #fname="ngModel" required minlength="2"
+                <input matInput placeholder="First name" [(ngModel)]="person.firstName" #fname="ngModel" required minlength="2"
                     pattern="^[a-zA-Z]$">
                 <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
@@ -18,11 +18,11 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Last Name:</mat-label>
-                <input matInput placeholder="Paananen" [(ngModel)]="lastName" #fname="ngModel" required minlength="2"
+                <input matInput placeholder="Paananen" [(ngModel)]="lastName" #lname="ngModel" required minlength="2"
                     pattern="^[a-zA-Z]$">
-                <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-                <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+                <mat-error *ngIf="lname.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="lname.hasError('minlength')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="lname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div>
 
@@ -52,11 +52,11 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Username:</mat-label>
-                <input matInput placeholder="samurai44" [(ngModel)]="Username" #fname="ngModel" required minlength="6"
+                <input matInput placeholder="samurai44" [(ngModel)]="Username" #uname="ngModel" required minlength="6"
                     pattern="^[a-zA-Z]$">
-                <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-                <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+                <mat-error *ngIf="uname.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="uname.hasError('minlength')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="uname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div>
 

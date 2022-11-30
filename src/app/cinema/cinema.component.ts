@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CinemaService } from '../services/cinema.service';
 
 @Component({
   selector: 'app-cinema',
@@ -7,11 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CinemaComponent implements OnInit {
 
+ 
   panelOpenState = false;
+  cinemaData$: Observable<any>;
   
-  constructor() { }
+  constructor(public cinemaservice: CinemaService) 
+  { 
+   
+    this.cinemaData$ = this.cinemaservice.getTestData();
+    this.cinemaData$ = this.cinemaservice.getData();
+ 
+  }
+
+
 
   ngOnInit(): void {
+
   }
 
 }

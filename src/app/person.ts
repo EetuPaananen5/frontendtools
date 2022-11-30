@@ -10,12 +10,14 @@ export class Person {
 
     personId: any="";
 
-    
-
-
-
+constructor(){
+    this.firstName="Sami";
+    this.lastName=" ";
+    this.email=" ";
+    this.passWord=" ";
+    this.personId=" ";
 }
-
+}
 
 
 

@@ -15,7 +15,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-//import { RegistrationComponent } from './form/form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -23,6 +22,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TemplateComponent } from './template/template.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({ 
@@ -53,6 +54,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ReactiveFormsModule,
     MatInputModule,
     MatExpansionModule,
+    HttpClientModule,
    
  
 

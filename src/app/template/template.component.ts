@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
+import { Person } from '../person';
 
 @Component({
   selector: 'app-template',
@@ -11,7 +12,7 @@ export class TemplateComponent implements OnInit {
 
 
 
-
+  person:Person;
   pwrd: any;
   firstName: any;
   lastName: any;
@@ -25,14 +26,19 @@ export class TemplateComponent implements OnInit {
   onSubmit(x: any): any {
 
   }
-  constructor() { }
+  constructor() {
+    this.person=new Person
+   }
 
   ngOnInit(): void {
   }
 
-OnSubmit(e: { value: { firstName: any; }; conrols: { [x: string]: { status: any; }; }; }){
-  console.log(e.value.firstName);
-  console.log(e.conrols['firstName'].status);
+OnSubmit(formdata: any){
+  console.log(formdata.value.firstName);
+  console.log(formdata.value.lastName);
+  console.log(formdata.value.personId);
+  console.log(formdata.value.passWord);
+  formdata.reset();
 }
 
 

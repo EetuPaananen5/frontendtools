@@ -6,6 +6,8 @@ import { HelloworldComponent } from './helloworld/helloworld.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TemplateComponent } from './template/template.component';
 import { CinemaComponent } from './cinema/cinema.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
  {path: 'template', component: TemplateComponent},
  {path: 'reactiveform', component: ReactiveformComponent},
  {path: 'cinema', component: CinemaComponent},
+ {path: 'admin', component: AdminComponent},
+ {path: 'login', component: LoginComponent},
   
   ];
   

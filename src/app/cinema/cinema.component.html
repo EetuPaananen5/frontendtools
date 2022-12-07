@@ -1,14 +1,20 @@
-
-
 <div class="paneeli">
-    <br><br>
-<h1>Finnkinon elokuva näytökset</h1>
+  <br><br>
+  <h1>Finnkinon elokuva näytökset</h1>
 
-<mat-accordion>
-    <mat-expansion-panel *ngFor="let item of cinemaData$ | async">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Hae uutisia</mat-label>
+      <input matInput placeholder="kirjoita hakusana" [(ngModel)]="searchTerm">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </p>
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let item of cinemaData$ | async | newsfilter: searchTerm">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ item.PublishDate | date:"MM/dd/yy" }}
+          {{ item.PublishDate | date:"dd.MM.yy" }}
         </mat-panel-title>
         <mat-panel-description>
           {{item.Title}}

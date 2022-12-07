@@ -23,7 +23,7 @@ export class CinemaService {
     // filter operaattori, suodatus annetun ehdon mukaan
     return this.httpClient.get(this.url, { responseType: 'text' })
       .pipe(map(response => {
-        let newsData: any[] = [];
+       let newsData: any[] = [];
         parseString(response, {
           trim:true,
           explicitArray: true,
@@ -35,7 +35,7 @@ export class CinemaService {
         });
 
 
-        //console.log('getXMLData... ' + response);
+        console.log('getXMLData...' + response);
         
         // tässä muunnetaan xml-data json muotoon
         return newsData;

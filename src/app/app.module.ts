@@ -23,6 +23,10 @@ import { TemplateComponent } from './template/template.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsfilterPipe } from './pipes/newsfilter.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -36,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
     ToolbarComponent,
     ReactiveformComponent,
     TemplateComponent,
-    CinemaComponent
+    CinemaComponent,
+    NewsfilterPipe,
+    AdminComponent,
+    LoginComponent
   ],
 
   imports: [

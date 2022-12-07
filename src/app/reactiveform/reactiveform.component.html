@@ -5,7 +5,6 @@
 
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-
         <mat-form-field class="field-full-width">
             <input matInput placeholder="first name" formControlName="firstName">
             <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
@@ -21,8 +20,6 @@
         </mat-form-field>
 
         <br>
-        <br>
-
 
         <mat-form-field class="field-full-width">
             <input matInput placeholder="person ID" formControlName="personID">
@@ -31,21 +28,34 @@
             <mat-error *ngIf="personID?.hasError('pattern')">Mast be valid name</mat-error>
         </mat-form-field>
         <br>
-
+<br>
 
         <div class="example-container">
             <mat-form-field class="field-full-width">
                 <mat-label>Email:</mat-label>
                 <input matInput type="email" placeholder="eetu.paananen@gmail.com" formControlName="email" required
                     minlength="2" pattern="^[a-zA-Z]$">
-
-                <mat-error *ngIf="email?.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="email?.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="email?.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="email?.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div>
         <br><br>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                     placeholder="Ex. pat@example.com">
+              <mat-hint>Errors appear instantly!</mat-hint>
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </form>
+          <br>
 
         <mat-form-field class="field-full-width" >
             <mat-label>Username:</mat-label>
@@ -74,12 +84,12 @@
 
         <br><br>
 
-        <!--p>Accept terms and conditions!</p>
+        <p>Accept terms and conditions!</p>
         <mat-checkbox formControlName="acceptCheckbox"></mat-checkbox>
         <mat-error *ngIf="acceptCheckbox?.hasError('requiredTrue')"> accept termsconditions </mat-error>
         <br><br>
-        <button mat-button color="primary" type="submit" [disabled]="profileForm.invalid">submit</button-->
-
+        <button mat-button color="primary" type="submit" [disabled]="profileForm.invalid">submit</button>
+        <button md-raised-button class="btn" [disabled]="profileForm.invalid" >Login</button>
         <div>
 
 

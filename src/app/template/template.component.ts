@@ -8,10 +8,6 @@ import { Person } from '../person';
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent implements OnInit {
-
-
-
-
   person:Person;
   pwrd: any;
   firstName: any;

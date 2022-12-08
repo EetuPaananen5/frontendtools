@@ -8,6 +8,7 @@ import { TemplateComponent } from './template/template.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './share/auth.guard';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
  {path: 'template', component: TemplateComponent},
  {path: 'reactiveform', component: ReactiveformComponent},
  {path: 'cinema', component: CinemaComponent},
- {path: 'admin', component: AdminComponent},
+ {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
  {path: 'login', component: LoginComponent},
   
   ];

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsfilterPipe } from './pipes/newsfilter.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
+import{AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
+  
+
 
 
 
@@ -62,6 +67,7 @@ import { LoginComponent } from './login/login.component';
     MatInputModule,
     MatExpansionModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase') as ModuleWithProviders<AngularFireModule>,
    
  
 

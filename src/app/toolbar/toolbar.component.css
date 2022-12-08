@@ -1,3 +1,7 @@
-button{
-    text-decoration: none;
+.singbutton{
+    
+    color:blue
+}
+.moro{
+    flex: 1 1 auto;
 }

@@ -5,11 +5,19 @@
 
     <span>Frontend työkalut</span>
 
+
     <span class="moro"> </span>
 
-    <a routerLink="/admin/login" routerLinkActive="active">
-        <button class="singbutton"> sing in</button>
-        </a>
+  
+
+    <a routerLink="/login" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
+        <button class="singbutton"> Sign in</button>
+    </a>
+
+    <div *ngIf="(userEmail$ | async)">
+        // näytetään kirjautuneen käyttäjän sposti ja LOGOUT button
+    </div>
+
 
 </mat-toolbar>
 

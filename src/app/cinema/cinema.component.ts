@@ -16,7 +16,8 @@ export class CinemaComponent implements OnInit {
   constructor(public cinemaservice: CinemaService) 
   { 
    
-    this.cinemaData$ = this.cinemaservice.getTestData();
+    //this.cinemaData$ = this.cinemaservice.getTestData();
+
     this.cinemaData$ = this.cinemaservice.getData();
  
   }

@@ -7,13 +7,15 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>First Name:</mat-label>
-                <input matInput placeholder="First name" [(ngModel)]="person.firstName" #fname="ngModel" required minlength="2"
-                    pattern="^[a-zA-Z]$">
+                <input matInput placeholder="First name" [(ngModel)]="person.firstName" #fname="ngModel" required
+                    minlength="2" pattern="^[a-zA-Z]$">
                 <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div>
+
+   
 
         <div class="example-container">
             <mat-form-field appearance="fill">
@@ -29,8 +31,7 @@
         <div class="example-container">
             <mat-form-field appearance="fill">
                 <mat-label>Person Id:</mat-label> <input matInput placeholder="060300B56C" [(ngModel)]="personId"
-                    #pID="ngModel" 
-                    pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d+|\d\d-|[01]\dA)\d{3}[\dA-Z]">
+                    #pID="ngModel" pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d+|\d\d-|[01]\dA)\d{3}[\dA-Z]">
                 <mat-error *ngIf="pID.hasError('required')">Enter your ID</mat-error>
                 <mat-error *ngIf="pID.hasError('pattern')">Must be valid personID</mat-error>
             </mat-form-field>
@@ -87,9 +88,9 @@
             </mat-form-field>
 
             <br><br>
-            <input type="checkbox" required name="checkbox" [(ngModel)]="hasAcceptedTerms" >
-
-            <button input type="submit" class="btn btn-success"  [disabled]="form1.invalid"> Submit </button>
+            <input type="checkbox" required name="checkbox" [(ngModel)]="acceptCheckbox">
+            <p>Accept terms and conditions!</p>
+            <button input type="submit" class="btn btn-success" [disabled]="form1.invalid"> Submit </button>
 
             <!--div class="example-container">
         <mat-form-field appearance="fill">
@@ -102,7 +103,7 @@
     </div-->
 
 
-            <p>Accept terms and conditions!</p>
+
             <!--mat-checkbox formControlName="acceptCheckbox"></mat-checkbox>
         <mat-error *ngIf="acceptCheckbox?.hasError('requiredTrue')"> accept termsconditions </mat-error>
         <br><br>
@@ -121,4 +122,3 @@
             <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
             <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
         </mat-form-field-->
-    

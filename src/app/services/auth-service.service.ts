@@ -69,4 +69,9 @@ export class AuthServiceService {
     return this.userEmail;
   }
 
+  BehaviorSubject(userEmail: any){
+    return this.userEmail
+   
+  }
+
 }

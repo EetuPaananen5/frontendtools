@@ -1,7 +1,7 @@
 <div class="kirjoituspaikka">
 
     <br><br>
-    <h1>Reactoveform Works!</h1>
+    <h1>Reactiveform Works!</h1>
 
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
@@ -28,9 +28,9 @@
             <mat-error *ngIf="personID?.hasError('pattern')">Mast be valid name</mat-error>
         </mat-form-field>
         <br>
-<br>
 
-        <div class="example-container">
+
+        <!--div class="example-container">
             <mat-form-field class="field-full-width">
                 <mat-label>Email:</mat-label>
                 <input matInput type="email" placeholder="eetu.paananen@gmail.com" formControlName="email" required
@@ -39,8 +39,8 @@
                 <mat-error *ngIf="email?.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="email?.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
-        </div>
-        <br><br>
+        </div-->
+        <br>
         <form class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
@@ -85,6 +85,8 @@
         <br><br>
 
         <p>Accept terms and conditions!</p>
+
+        <input type="checkbox" formControlName="acceptCheckbox">
         <mat-checkbox formControlName="acceptCheckbox"></mat-checkbox>
         <mat-error *ngIf="acceptCheckbox?.hasError('requiredTrue')"> accept termsconditions </mat-error>
         <br><br>

@@ -28,7 +28,8 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import{AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
-
+import { LippuComponent } from './lippu/lippu.component';
+import {MatSelectModule} from '@angular/material/select';
   
 
 
@@ -48,7 +49,8 @@ import { environment } from 'src/environments/environment';
     CinemaComponent,
     NewsfilterPipe,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    LippuComponent
   ],
 
   imports: [
@@ -66,6 +68,7 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     MatInputModule,
     MatExpansionModule,
+    MatSelectModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase') as ModuleWithProviders<AngularFireModule>,
    

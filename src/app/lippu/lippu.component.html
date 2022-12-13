@@ -1,0 +1,108 @@
+<div class="container">
+    <form #formcontrol="ngForm">
+        <h1>Maatalous näyttelyn 2023 liput nyt myynnissä!</h1>
+        <br>
+        <form>
+            <h2>Osta Tästä Liput!</h2>
+
+            <h3>Valitse Lipputyyppi:</h3>
+            <mat-form-field appearance="fill">
+                <mat-label></mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="lipputyyppi">
+                    <mat-option *ngFor="let lippuTyyppi of lippuTyyppit" [value]="lippuTyyppi.value">
+                        {{lippuTyyppi.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <h3> Lipun Hinta on: {{selectedValue}} </h3>
+        </form>
+
+        <br>
+        <div class="feedback" *ngFor="let q of questions">
+            {{q.question}}
+            <mat-slider min="0" max="3" step="1" value="0" (input)="onInputChange($event, q)"
+                aria-label="unit(s)"></mat-slider>
+            {{q.answear}}
+        </div>
+        <br>
+
+        <h3>Oletko sinä MTK Jäsen?</h3>
+        <mat-form-field appearance="fill">
+            <mat-label>MTK jäsen</mat-label>
+            <mat-select>
+                <mat-option value="option">Olen. Saat-15% kassalla</mat-option>
+                <mat-option value="option">En ole</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+
+
+        <h3>Täytä tilaajan tiedot:</h3>
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field class="field-full-width">
+                <input matInput placeholder="Etunimi:" formControlName="firstName">
+                <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="firstName?.hasError('minlength')"> minimi 2 characters required</mat-error>
+                <mat-error *ngIf="firstName?.hasError('pattern')">Mast be valid name</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="field-full-width">
+                <input matInput placeholder="Sukunimi:" formControlName="lastName">
+                <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+                <mat-error *ngIf="lastName?.hasError('minlength')"> minimi 2 characters required</mat-error>
+                <mat-error *ngIf="lastName?.hasError('pattern')">Mast be valid name</mat-error>
+            </mat-form-field>
+
+            <br>
+
+
+            <h3>Liput lähetetään tähän sähköpostiin:</h3>
+            <div class="example-container">
+                <mat-form-field class="field-full-width">
+                    <mat-label>Kirjoita sähköposti</mat-label>
+                    <input matInput placeholder="aaa@gmail.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <div *ngFor="let x of saveall">
+                <button (click)="clickEvent()" mat-raised-button color="primary" [disabled]="profileForm.invalid">Osta
+                    liput</button>
+                </div>
+
+
+
+
+
+
+            </div>
+        </form>
+
+       
+ <!--section> 
+    INFO:  Koitin aluksi tehdä buttoneilla mutta tuli ongelmia joten suoritin tehtävän formejen avuilla, tässä buttonit
+    <div class="example-label">Perus Lippu</div>
+    <div class="example-button-row">
+      <button (click)="buttonClicked()" mat-raised-button color="primary">+</button>
+      <button mat-raised-button color="warn">-</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="example-label">Opiskelija</div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">+</button>
+      <button mat-raised-button color="warn">-</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="example-label">Eläkeläinen</div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">+</button>
+      <button mat-raised-button color="warn">-</button>
+    </div>
+  </section-->

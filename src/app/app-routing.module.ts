@@ -9,6 +9,7 @@ import { CinemaComponent } from './cinema/cinema.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './share/auth.guard';
+import { LippuComponent } from './lippu/lippu.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
  {path: 'cinema', component: CinemaComponent},
  {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
  {path: 'login', component: LoginComponent},
+ {path: 'lippu', component: LippuComponent},
   
   ];
   

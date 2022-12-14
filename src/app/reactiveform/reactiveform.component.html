@@ -23,9 +23,9 @@
 
         <mat-form-field class="field-full-width">
             <input matInput placeholder="person ID" formControlName="personID">
-            <mat-error *ngIf="personID?.hasError('required')">Enter your first name</mat-error>
-            <mat-error *ngIf="personID?.hasError('minlength')"> minimi 2 characters required</mat-error>
-            <mat-error *ngIf="personID?.hasError('pattern')">Mast be valid name</mat-error>
+            <mat-error *ngIf="personID?.hasError('required')">Anna henkilötunnuksesi </mat-error>
+            <mat-error *ngIf="personID?.hasError('minlength')"> vähintään 10 merkkiä</mat-error>
+            <mat-error *ngIf="personID?.hasError('pattern')">Käytä suomalaisen sotun mukaista tyyliä eli numeroita ja isoja kirjaimia </mat-error>
         </mat-form-field>
         <br>
 
@@ -33,26 +33,21 @@
         <!--div class="example-container">
             <mat-form-field class="field-full-width">
                 <mat-label>Email:</mat-label>
-                <input matInput type="email" placeholder="eetu.paananen@gmail.com" formControlName="email" required
-                    minlength="2" pattern="^[a-zA-Z]$">
+                <input matInput type="email" placeholder="eetu.paananen@gmail.com" formControlName="email">
                 <mat-error *ngIf="email?.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="email?.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="email?.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
         </div-->
-        <br>
+        
         <form class="example-form">
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
                 <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                    placeholder="Ex. pat@example.com">
-                <mat-hint>Errors appear instantly!</mat-hint>
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                    Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                    Email is <strong>required</strong>
-                </mat-error>
+                    placeholder="eetu@gmail.com">
+                <mat-hint>Tässä näkyy mat hint esim errorit </mat-hint>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
             </mat-form-field>
         </form>
         <br>
@@ -60,29 +55,28 @@
         <mat-form-field class="field-full-width">
             <mat-label>Username:</mat-label>
             <input matInput placeholder="Username" formControlName="Username">
-            <mat-error *ngIf="Username?.hasError('required')">Enter your first name</mat-error>
-            <mat-error *ngIf="Username?.hasError('minlength')">Minimum 2 characters required</mat-error>
-            <mat-error *ngIf="Username?.hasError('pattern')">Must be valid name</mat-error>
-        </mat-form-field>
-        <br><br>
-
-        <mat-form-field class="field-full-width">
-            <input matInput type="password" placeholder="password" formControlName="password">
-            <mat-error *ngIf="passworld?.hasError('required')">Enter password</mat-error>
-            <mat-error *ngIf="passworld?.hasError('minlength')"> Minium 10 characters required</mat-error>
-            <mat-error *ngIf="passworld?.hasError('pattern')">Mast have letters and numbers</mat-error>
+            <mat-error *ngIf="Username?.hasError('required')">Enter your username</mat-error>
+            <mat-error *ngIf="Username?.hasError('minlength')">Username oltava 6 merkkiä</mat-error>
         </mat-form-field>
         <br>
 
         <mat-form-field class="field-full-width">
-            <input matInput type="password" placeholder="password confirm" formControlName="passwordConfirm"
-                pattern="{{passworld?.value}}">
-            <mat-error *ngIf="passworld?.hasError('required')">Enter valid password, minimun 10 characters required
-            </mat-error>
-            <mat-error *ngIf="passworld?.hasError('pattern')">Must have letters and numbers</mat-error>
+            <mat-label>Password:</mat-label>
+            <input matInput  placeholder="Password here" formControlName="password" type="password">
+            <mat-error *ngIf="password?.hasError('required')">Enter password</mat-error>
+            <mat-error *ngIf="password?.hasError('minlength')"> Salasanan pituus oltava ainakin 10 merkkiä</mat-error>
+            <mat-error *ngIf="password?.hasError('pattern')">Mast have letters and numbers</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="Confirm your password" formControlName="confirmpassword" type="password"
+                pattern="{{password?.value}}">
+            <mat-error *ngIf="confirmpassword?.hasError('required')">Enter valid password, minimun 10 characters required</mat-error>
+            <mat-error *ngIf="confirmpassword?.hasError('pattern')">Must have letters and numbers</mat-error>
         </mat-form-field>
 
-        <br><br>
+        <br>
 
         <p>Accept terms and conditions!</p>
 

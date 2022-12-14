@@ -19,13 +19,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ReactiveformComponent implements OnInit {
 
+  profileForm: FormGroup;
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
 
-  
-
-  profileForm: FormGroup;
 
   onSubmit() {
     console.log('profileForm.value: ' + this.profileForm.value);
@@ -41,16 +40,15 @@ export class ReactiveformComponent implements OnInit {
   get lastName() {
     return this.profileForm.get('lastName');
   }
-
-  get passworld() {
-    return this.profileForm.get('pasworld');
-  }
-  get confirmpassworld() {
-    return this.profileForm.get('pasworld');
-  }
-
   get personID() {
     return this.profileForm.get('personID');
+  }
+
+  get password() {
+    return this.profileForm.get('pasworld');
+  }
+  get confirmpassword() {
+    return this.profileForm.get('pasworld');
   }
 
   get acceptCheckbox() {
@@ -70,16 +68,13 @@ export class ReactiveformComponent implements OnInit {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Iiro', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
       lastName: new FormControl('Haanpaa', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
-      passworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      Username: new FormControl('Iirokuu12', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      email: new FormControl('iiro.joo@gmai.com', [Validators.required, Validators.minLength(10),Validators.email ,  ]),
-      confirmpassworld: new FormControl('kalakukko', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      personID: new FormControl('060300b67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\\d\\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
+      personID: new FormControl('010100A67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\\d\\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
+      Username: new FormControl('Iirokuu12', [Validators.required, Validators.minLength(6)]),
+      email: new FormControl('iiro.joo@gmai.com', [Validators.required, Validators.minLength(10)]),
+      password: new FormControl('moromoro11', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
+      confirmpassword: new FormControl('moromoro11', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
       acceptCheckbox: new FormControl('', [Validators.requiredTrue]),
-
-    })
-
-  }
+    })}
 
   ngOnInit(): void {
 

@@ -1,14 +1,11 @@
-<mat-toolbar>
+<mat-toolbar class="tooli">
     <button mat-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
     </button>
 
     <span>Frontend työkalut</span>
 
-
     <span class="moro"> </span>
-
-  
 
     <a routerLink="/login" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
         <button class="singbutton"> Sign in</button>
@@ -18,49 +15,48 @@
         // näytetään kirjautuneen käyttäjän sposti ja LOGOUT button
     </div>
 
-
 </mat-toolbar>
 
 
 <mat-menu #menu="matMenu">
 
-    <button button mat-raised-button routerLink="/calculator" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/calculator" routerLinkActive="active">
         Calculator
     </button>
     <br>
 
-    <button button mat-raised-button routerLink="/feedback" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/feedback" routerLinkActive="active">
         Feedback
     </button>
     <br>
 
-    <button button mat-raised-button routerLink="/helloworld" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/helloworld" routerLinkActive="active">
         Helloworld
     </button>
     <br>
 
-    <button button mat-raised-button routerLink="/template" routerLinkActive="active">
-        Template
+    <button mat-button color="primary" routerLink="/template" routerLinkActive="active">
+        Template Form
     </button>
     <br>
 
-    <button button mat-raised-button routerLink="/reactiveform" routerLinkActive="active">
-        Reactiveform
+    <button mat-button color="primary" routerLink="/reactiveform" routerLinkActive="active">
+        Reactive Form
     </button>
     <br>
-    <button button mat-raised-button routerLink="/cinema" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/cinema" routerLinkActive="active">
         Cinema
     </button>
     <br>
-    <button button mat-raised-button routerLink="/admin" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/admin" routerLinkActive="active">
         admin
     </button>
     <br>
-    <button button mat-raised-button routerLink="/login" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/login" routerLinkActive="active">
         Login
     </button>
     <br>
-    <button button mat-raised-button routerLink="/lippu" routerLinkActive="active">
+    <button mat-button color="primary" routerLink="/lippu" routerLinkActive="active">
         Maatalous Lippu
     </button>
 

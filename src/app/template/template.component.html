@@ -3,122 +3,88 @@
     <h1>Template works!</h1>
 
 
-    <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
-        <div class="example-container">
-            <mat-form-field appearance="fill">
-                <mat-label>First Name:</mat-label>
-                <input matInput placeholder="First name" [(ngModel)]="person.firstName" #fname="ngModel" required
-                    minlength="2" pattern="^[a-zA-Z]$">
+    <form (ngSubmit)="OnSubmit(form1)" #form1="ngForm">
+
+            <mat-form-field>
+                <input matInput placeholder="First name" name="firstname" [(ngModel)]="person.firstName" #fname="ngModel" required
+                    minlength="2" pattern="[a-zA-Z]*">
                 <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
-        </div>
+      
 
-   
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
+            <br>
+            <mat-form-field>
                 <mat-label>Last Name:</mat-label>
-                <input matInput placeholder="Paananen" [(ngModel)]="lastName" #lname="ngModel" required minlength="2"
-                    pattern="^[a-zA-Z]$">
+                <input matInput placeholder="Last Name" name="lastname" [(ngModel)]="person.lastName" #lname="ngModel" required minlength="2"
+                    pattern="^[a-zA-Z]*">
                 <mat-error *ngIf="lname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="lname.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="lname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
-        </div>
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
-                <mat-label>Person Id:</mat-label> <input matInput placeholder="060300B56C" [(ngModel)]="personId"
+        
+                <br>
+        
+            <mat-form-field>
+                <mat-label>Person Id:</mat-label> 
+                <input matInput placeholder="060300B56C" [(ngModel)]="person.personId"
                     #pID="ngModel" pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d+|\d\d-|[01]\dA)\d{3}[\dA-Z]">
                 <mat-error *ngIf="pID.hasError('required')">Enter your ID</mat-error>
                 <mat-error *ngIf="pID.hasError('pattern')">Must be valid personID</mat-error>
             </mat-form-field>
-        </div>
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
+             <br>
+            <mat-form-field>
                 <mat-label>Email:</mat-label>
-                <input matInput placeholder="eetu.paananen@gmail.com" [(ngModel)]="email" #mail="ngModel" required
+                <input matInput placeholder="eetu.paananen@gmail.com" [(ngModel)]="person.email" #mail="ngModel" required
                     minlength="2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                 <mat-error *ngIf="mail.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="mail.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="mail.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
-        </div>
+       
 
 
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
+<br>
+        
+            <mat-form-field>
                 <mat-label>Username:</mat-label>
-                <input matInput placeholder="samurai44" [(ngModel)]="Username" #uname="ngModel" required minlength="6"
+                <input matInput placeholder="samurai44" [(ngModel)]="person.username" #uname="ngModel" required minlength="6"
                     pattern="^[a-zA-Z]$">
                 <mat-error *ngIf="uname.hasError('required')">Enter your first name</mat-error>
                 <mat-error *ngIf="uname.hasError('minlength')">Minimum 2 characters required</mat-error>
                 <mat-error *ngIf="uname.hasError('pattern')">Must be valid name</mat-error>
             </mat-form-field>
-        </div>
 
-
-
-
-
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
+                <br>
+            <mat-form-field>
                 <mat-label>Password:</mat-label>
-                <input matInput placeholder="TääOnSalasana123" [(ngModel)]="Password" #pwrd="ngModel" type="password"
-                    name="password1" required minlength="10" required maxlength="18" pattern="^[a-zA-Z]$">
+                <input matInput placeholder="TääOnSalasana123" [(ngModel)]="person.password" #pwrd="ngModel" type="password"
+                    name="password1" required minlength="10" required maxlength="18" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{10,}$">
                 <mat-error *ngIf="pPassword.hasError('required')">Enter valid password, minimum 10 character</mat-error>
                 <mat-error *ngIf="pPassword.hasError('required')">Must have letters and numbers</mat-error>
             </mat-form-field>
-        </div>
+                <br>
 
-
-        <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field>
                 <mat-label>Confirm Password:</mat-label>
-                <input matInput placeholder="TääOnSalasana123" [(ngModel)]="ConfirmPassword" #pPassword="ngModel"
+                <input matInput placeholder="TääOnSalasana123" [(ngModel)]="person.ConfirmPassword" #pPassword="ngModel"
                     type="password" name="password2" required minlength="10" required maxlength="18"
                     pattern="{{pwrd.value}}">
                 <!--mat-error *ngIf="pwrd.hasError('required')">Enter valid password, minimum 10 character</mat-error>
             <mat-error *ngIf="pwrd.hasError('required')">Must have letters and numbers</mat-error-->
             </mat-form-field>
 
-            <br><br>
-            <input type="checkbox" required name="checkbox" [(ngModel)]="acceptCheckbox">
+            <br>
+            <input type="checkbox" required name="checkbox" [(ngModel)]="person.acceptCheckbox" #box="ngModel">
+            <mat-error *ngIf="box.hasError('pattern')"> Accept terms and conditions!</mat-error>
+
+
+
             <p>Accept terms and conditions!</p>
-            <button input type="submit" class="btn btn-success" [disabled]="form1.invalid"> Submit </button>
-
-            <!--div class="example-container">
-        <mat-form-field appearance="fill">
-            <mat-label>Accept terms and conditions:</mat-label>
-            <input  [(ngModel)]="hasAcceptedTerms" #pPassword="ngModel" type="checkbox"
-                name="password1" >
-            <mat-error *ngIf="pPassword.hasError('required')">Enter valid password, minimum 10 character</mat-error>
-            <mat-error *ngIf="pPassword.hasError('required')">Must have letters and numbers</mat-error>
-        </mat-form-field>
-    </div-->
+            <button mat-button color="primary" [disabled]="form1.invalid"> Submit </button>
 
 
 
-            <!--mat-checkbox formControlName="acceptCheckbox"></mat-checkbox>
-        <mat-error *ngIf="acceptCheckbox?.hasError('requiredTrue')"> accept termsconditions </mat-error>
-        <br><br>
-        <button mat-button color="primary" type="submit" [disabled]="profileForm.invalid">submit</button-->
 
-
-        </div>
-
-        <!--mat-form-field>
-            <input matInput 
-            placeholder="first name" 
-            [(ngModel)]="firstName"
-             #fname="ngModel" 
-             required minlength="2"  pattern="^[a-zA-Z]$">
-            <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
-            <mat-error *ngIf="fname.hasError('minlength')">Minimum 2 characters required</mat-error>
-            <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
-        </mat-form-field-->
+       

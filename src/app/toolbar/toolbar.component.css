@@ -16,3 +16,17 @@
     display: inline-block;
     font-size: 16px;
 }
+
+.tooli{
+    background-color: #c3d9fb; /* Green */
+    animation: bg-color 10s infinite;
+}
+
+@keyframes bg-color {
+    0% { background-color: #fbe0dd; }
+    20% { background-color: #f5e4a3; }
+    40% { background-color: #98f9e5; }
+    60% { background-color: #aeddfc; }
+    80% { background-color: #ffc4c4; }
+    100% { background-color: #e5ff9d; }
+  }

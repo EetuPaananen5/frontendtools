@@ -9,19 +9,8 @@ import { Person } from '../person';
 })
 export class TemplateComponent implements OnInit {
   person:Person;
-  pwrd: any;
-  firstName: any;
-  lastName: any;
-  personId: any;
-  email: any;
-  Username: any;
-  Password: any;
-  ConfirmPassword: any;
-  hasAcceptedTerms: any;
-  acceptCheckbox: any;
-  onSubmit(x: any): any {
 
-  }
+  
   constructor() {
     this.person=new Person
    }

@@ -6,16 +6,29 @@ export class Person {
 
     email: any="";
 
-    passWord: any="";
+    username: any="";
+
+    password: any="";
 
     personId: any="";
 
+    ConfirmPassword: any="";
+
+    acceptCheckbox: any="";
+
+
+
+    
+
 constructor(){
-    this.firstName="Sami";
-    this.lastName=" ";
-    this.email=" ";
-    this.passWord=" ";
-    this.personId=" ";
+    this.firstName="";
+    this.lastName="";
+    this.email="";
+    this.password="";
+    this.personId="";
+    this.username="";
+    this.ConfirmPassword="";
+    this.acceptCheckbox="";
 }
 }
 

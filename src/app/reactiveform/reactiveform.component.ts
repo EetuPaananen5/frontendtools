@@ -25,6 +25,7 @@ export class ReactiveformComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
+  hide = true;
 
   onSubmit() {
     console.log('profileForm.value: ' + this.profileForm.value);
@@ -45,10 +46,10 @@ export class ReactiveformComponent implements OnInit {
   }
 
   get password() {
-    return this.profileForm.get('pasworld');
+    return this.profileForm.get('password');
   }
   get confirmpassword() {
-    return this.profileForm.get('pasworld');
+    return this.profileForm.get('confirmpassword');
   }
 
   get acceptCheckbox() {
@@ -63,18 +64,17 @@ export class ReactiveformComponent implements OnInit {
 
 
 
-
   constructor() {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Iiro', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
       lastName: new FormControl('Haanpaa', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]*$')]),
-      personID: new FormControl('010100A67C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\\d\\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
+      personID: new FormControl('010100A677C', [Validators.required, Validators.minLength(10), Validators.pattern('^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d+|\\d\\d-|[01]\\dA)\\d{3}[\\dA-Z]')]),
       Username: new FormControl('Iirokuu12', [Validators.required, Validators.minLength(6)]),
       email: new FormControl('iiro.joo@gmai.com', [Validators.required, Validators.minLength(10)]),
-      password: new FormControl('moromoro11', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      confirmpassword: new FormControl('moromoro11', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z]*$')]),
-      acceptCheckbox: new FormControl('', [Validators.requiredTrue]),
-    })}
+      password: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{10,}$')]),
+      confirmpassword: new FormControl('', [Validators.required, Validators.minLength(10)]),
+      acceptCheckbox: new FormControl(  [Validators.required]), })}
+    
 
   ngOnInit(): void {
 

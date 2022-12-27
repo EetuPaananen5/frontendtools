@@ -4,7 +4,7 @@ import { FormControl, FormGroupDirective, NgForm, FormGroup, Validators } from '
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
-/** Error when invalid control is dirty, touched, or submitted. */
+
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -73,7 +73,7 @@ export class ReactiveformComponent implements OnInit {
       email: new FormControl('iiro.joo@gmai.com', [Validators.required, Validators.minLength(10)]),
       password: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{10,}$')]),
       confirmpassword: new FormControl('', [Validators.required, Validators.minLength(10)]),
-      acceptCheckbox: new FormControl(  [Validators.required]), })}
+      acceptCheckbox: new FormControl( '', [Validators.required]), })}
     
 
   ngOnInit(): void {

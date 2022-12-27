@@ -30,15 +30,6 @@
         <br>
 
 
-        <!--div class="example-container">
-            <mat-form-field class="field-full-width">
-                <mat-label>Email:</mat-label>
-                <input matInput type="email" placeholder="eetu.paananen@gmail.com" formControlName="email">
-                <mat-error *ngIf="email?.hasError('required')">Enter your first name</mat-error>
-                <mat-error *ngIf="email?.hasError('minlength')">Minimum 2 characters required</mat-error>
-                <mat-error *ngIf="email?.hasError('pattern')">Must be valid name</mat-error>
-            </mat-form-field>
-        </div-->
         
         <form class="example-form">
             <mat-form-field class="example-full-width">
@@ -60,37 +51,19 @@
         </mat-form-field>
         <br>
 
-        <!--mat-form-field class="field-full-width">
-            <mat-label>Password:</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password here" formControlName="password" >
-            <//#pwrd="ngModel">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            <mat-error *ngIf="password?.hasError('required')">Enter password</mat-error>
-            <mat-error *ngIf="password?.hasError('minlength')"> Salasanan pituus oltava ainakin 10 merkkiä</mat-error>
-            <mat-error *ngIf="password?.hasError('pattern')">Mast have letters and numbers</mat-error>
-        </mat-form-field-->
-        <br>
-
-        <!--mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field-->
           
         <mat-form-field class="field-full-width">
-            <input matInput placeholder=" password" formControlName="password">
+            <mat-label>Password:</mat-label>
+            <input matInput placeholder=" password"  type="password" formControlName="password">
             <mat-error *ngIf="password?.hasError('required')">Enter valid password, minimun 10 characters required</mat-error>
             <mat-error *ngIf="password?.hasError('pattern')">Must have  big letters and numbers</mat-error>
         </mat-form-field>
 <br>
         <mat-form-field class="field-full-width">
-            <input matInput placeholder="Confirm your password" formControlName="confirmpassword"  pattern="{{password?.value}}">
-            <mat-error *ngIf="confirmpassword?.hasError('required')">Enter valid password, minimun 10 characters required</mat-error>
-            <mat-error *ngIf="confirmpassword?.hasError('pattern')">Must have letters and numbers</mat-error>
+            <mat-label>Confirm Password:</mat-label>
+            <input matInput placeholder="Confirm your password"  type="password" formControlName="confirmpassword"  pattern="{{password?.value}}">
+            <mat-error *ngIf="confirmpassword?.hasError('required')"> Enter valid password, minimun 10 characters required</mat-error>
+            <mat-error *ngIf="confirmpassword?.hasError('pattern')">must be matching and must have letters and numbers</mat-error>
         </mat-form-field>
 
         <br>

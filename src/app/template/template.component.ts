@@ -10,7 +10,6 @@ import { Person } from '../person';
 export class TemplateComponent implements OnInit {
   person:Person;
 
-  
   constructor() {
     this.person=new Person
    }
